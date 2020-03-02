@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>数据修改</title>
+
+    <link href="css/bootstrap.min.css" th:href="@{/asserts/css/bootstrap.css}" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css" th:href="@{/asserts/font-awesome/css/font-awesome.css}" rel="stylesheet">
+
+    <link href="css/plugins/iCheck/custom.css" th:href="@{/asserts/css/plugins/iCheck/custom.css}" rel="stylesheet">
+    <link href="css/animate.css" th:href="@{/asserts/css/animate.css}" rel="stylesheet">
+    <link href="css/style.css" th:href="@{/asserts/css/style.css}" rel="stylesheet">
+    <link href="css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" th:href="@{/asserts/css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css}" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div id="wrapper">
+
+    <nav th:replace="layout/head::commonnav"></nav>
+
+    <div id="page-wrapper" class="gray-bg">
+        <div th:replace="layout/head::commonhead"></div>
+        <div class="row wrapper border-bottom white-bg page-heading">
+            <div class="col-lg-10">
+                <h2>基本表单</h2>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="index.html">主页</a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a>表单</a>
+                    </li>
+                </ol>
+            </div>
+            <div class="col-lg-2">
+
+            </div>
+        </div>
+        <div class="wrapper wrapper-content animated fadeInRight">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ibox ">
+                        <div class="ibox-title">
+                            <h5>输入货物信息</small></h5>
+                            <div class="ibox-tools">
+                                <a class="collapse-link">
+                                    <i class="fa fa-chevron-up"></i>
+                                </a>
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                    <i class="fa fa-wrench"></i>
+                                </a>
+                                <ul class="dropdown-menu dropdown-user">
+                                    <li><a href="#" class="dropdown-item">选项 1</a>
+                                    </li>
+                                    <li><a href="#" class="dropdown-item">选项 2</a>
+                                    </li>
+                                </ul>
+                                <a class="close-link">
+                                    <i class="fa fa-times"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="ibox-content">
+                            <form th:action="@{/Product}" method="post">
+                                <input type="hidden" name="_method" value="put" th:if="${product!=null}"/>
+                                <input type="hidden" name="recordingid" th:if="${product!=null}" th:value="${product.productid}">
+                                <div class="form-group  row">
+                                    <label class="col-sm-2 col-form-label">货物名称</label>
+                                    <div class="col-sm-10">
+                                        <input name="product_name" th:value="${product!=null}?${product.product_name}" type="text" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="hr-line-dashed"></div>
+
+                                <div class="form-group row"><label class="col-sm-2 col-form-label">数量</label>
+                                    <div class="col-sm-10">
+                                        <input name="number" type="text" th:value="${product!=null}?${product.productVo_number}" class="form-control" ></div>
+                                </div>
+
+                                <div class="hr-line-dashed"></div>
+
+
+                                <div class="hr-line-dashed"></div>
+                                <div class="hr-line-dashed"></div>
+                                <div class="hr-line-dashed"></div>
+
+                                <div class="hr-line-dashed"></div>
+                                <div class="form-group row">
+                                    <div class="col-sm-4 col-sm-offset-2">
+                                        <button class="btn btn-white btn-sm" type="submit">取消</button>
+                                        <button class="btn btn-primary btn-sm" type="submit">保存更改</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="float-right">
+                <strong>2.9.2 inspinia</strong>
+            </div>
+            <div>
+                <strong>Copyright</strong> inspinia 2.9.2 &copy; 2014-2018
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- Mainly scripts -->
+<script src="js/jquery-3.1.1.min.js" th:src="@{/asserts/js/jquery-3.1.1.min.js}"></script>
+<script src="js/popper.min.js" th:src="@{/asserts/js/popper.min.js}"></script>
+<script src="js/bootstrap.js" th:src="@{/asserts/js/bootstrap.js}"></script>
+<script src="js/plugins/metisMenu/jquery.metisMenu.js" th:src="@{/asserts/js/plugins/metisMenu/jquery.metisMenu.js}"></script>
+<script src="js/plugins/slimscroll/jquery.slimscroll.min.js" th:src="@{/asserts/js/plugins/slimscroll/jquery.slimscroll.min.js}"></script>
+
+<!-- Custom and plugin javascript -->
+<script src="js/inspinia.js"  th:src="@{/asserts/js/inspinia.js}"></script>
+<script src="js/plugins/pace/pace.min.js"  th:src="@{/asserts/js/plugins/pace/pace.min.js}"></script>
+
+
+<!-- iCheck -->
+<script src="js/plugins/iCheck/icheck.min.js" th:src="@{/asserts/js/plugins/iCheck/icheck.min.js}"></script>
+<script>
+    $(document).ready(function () {
+        $('.i-checks').iCheck({
+            checkboxClass: 'icheckbox_square-green',
+            radioClass: 'iradio_square-green',
+        });
+    });
+</script>
+</body>
+
+</html>
