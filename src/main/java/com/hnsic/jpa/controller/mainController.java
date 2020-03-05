@@ -16,4 +16,8 @@ public class mainController {
     public String toMain(){
         return "index";
     }
+    @GetMapping(value = "test")
+    public String totest(){
+        return "test";
+    }
 }

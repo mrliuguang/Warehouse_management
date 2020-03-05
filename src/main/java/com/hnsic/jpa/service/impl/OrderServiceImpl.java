@@ -1,10 +1,8 @@
 package com.hnsic.jpa.service.impl;
 
 import com.hnsic.jpa.entity.po.Order;
-import com.hnsic.jpa.entity.vo.OrderVo;
 import com.hnsic.jpa.respository.OrderRespository;
 import com.hnsic.jpa.service.OrderService;
-import com.hnsic.jpa.utils.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,7 +18,7 @@ public class OrderServiceImpl implements OrderService {
     @Autowired
     OrderRespository orderRespository;
     @Override
-    public Order saveOrder(OrderVo vo) {
-        return  orderRespository.save(BeanUtils.Order_Vo_to_Po(vo));
+    public Order saveOrder(Order po) {
+        return  orderRespository.save(po);
     }
 }

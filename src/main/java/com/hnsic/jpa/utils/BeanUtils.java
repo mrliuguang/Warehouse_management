@@ -40,18 +40,18 @@ public class BeanUtils {
         else
             po.setOrderid(null);
         po.setOrderName(vo.getOrderName());
-        po.setBille_date(vo.getBille_date());
-        po.setSource_name(vo.getSource_name());
-        po.setSerial_num(vo.getSerial_num());
+        po.setBiller(vo.getBiller());
+        po.setDate(vo.getDate());
+        po.setTel(vo.getTel());
         return po;
     }
     public static OrderVo Order_Po_to_Vo(Order po){
         OrderVo vo=new OrderVo();
         vo.setOrderid(vo.getOrderid());
         vo.setOrderName(po.getOrderName());
-        vo.setBille_date(po.getBille_date());
-        vo.setSource_name(po.getSource_name());
-        vo.setSerial_num(po.getSerial_num());
+        vo.setDate(po.getDate());
+        vo.setBiller(po.getBiller());
+        vo.setTel(po.getTel());
         return vo;
     }
 

@@ -27,7 +27,7 @@ public class RecordingServiceImpl implements RecordingService {
     ProductService productService;
     @Override
     public List<Recording> saveRecordings(List<Recording> vos) {
-        Iterable<Recording> recordingIterable= (Iterable<Recording>) vos.iterator();
+        Iterable<Recording> recordingIterable= (Iterable<Recording>) vos;
         List<Recording> recordings = recordingRespository.saveAll(recordingIterable);
         return recordings;
     }

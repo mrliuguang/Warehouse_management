@@ -4,7 +4,6 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Date;
 
 /**
  * 订单表 标志一个订单,主要字段为：订单id,进货方,进货日期,订单的序列号(一个订单中的货物序列)
@@ -26,13 +25,14 @@ public class Order implements Serializable {
     @Column
     private String orderName;
     //订单名称
-    @Column
-    private String Source_name;
+//    @Column
+////    private String Source_name;
     //进货来源
     @Column
-    private Date bille_date;
+    private String date;
     //进货时间
     @Column
-    private String serial_num;
-     //订单的序列号
+    private String biller;
+    @Column
+    private String tel;
 }

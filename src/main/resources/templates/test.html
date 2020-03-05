@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="css/bootstrap.min.css" th:href="@{/asserts/css/bootstrap.css}" rel="stylesheet">
+    <link href="css/plugins/dataTables/datatables.min.css" th:href="@{/asserts/css/plugins/dataTables/datatables.min.css}" rel="stylesheet">
+    <link href="css/plugins/datapicker/datepicker3.css" th:href="@{/asserts/css/plugins/datapicker/datepicker3.css}" rel="stylesheet">
+    <link rel="stylesheet" href="//apps.bdimg.com/libs/jqueryui/1.10.4/css/jquery-ui.min.css">
+    <script src="//apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="jqueryui/style.css">
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+        }
+
+        .gridArea {
+            padding: 10px;
+        }
+    </style>
+    <script>
+        $(function() {
+            $( "#datepicker" ).datepicker();
+        });
+    </script>
+</head>
+
+<body>
+<div class="form-group col-md-6" id="data_1">
+    <label class="col-sm-2 font-normal">时间：</label>
+    <div class="col-sm-10 input-group date">
+        <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input name="date" type="text" class="form-control" value="03/04/2014">
+    </div>
+
+    <p>日期：<input type="text" id="datepicker"></p>
+</div>
+
+
+
+<script src="js/jquery-3.1.1.min.js" th:src="@{/asserts/js/jquery-3.1.1.min.js}"></script>
+<script src="js/plugins/dataTables/datatables.min.js" th:src="@{/asserts/js/plugins/dataTables/datatables.min.js}"></script>
+<script src="js/bootstrap.js" th:src="@{/asserts/js/bootstrap.js}"></script>
+<script src="test.js"  th:src="@{/asserts/js/test.js}"></script>
+<!-- Data picker -->
+<script src="js/plugins/datapicker/bootstrap-datepicker.js" th:src="@{/asserts/js/plugins/datapicker/bootstrap-datepicker.js}"></script>
+<!-- Date range use moment.js same as full calendar plugin -->
+<script src="js/plugins/fullcalendar/moment.min.js"  th:src="@{/asserts/js/plugins/fullcalendar/moment.min.js}"></script>
+<!-- Date range picker -->
+<script src="js/plugins/daterangepicker/daterangepicker.js" th:src="@{/asserts/js/plugins/daterangepicker/daterangepicker.js}"></script>
+
+
+</body>
+
+</html>

@@ -49,8 +49,8 @@
                             <input id="MenuInput" type="text" class="form-control" placeholder="菜单" aria-label="菜单" aria-describedby="basic-addon2">
                             <div class="input-group-append">
                                 <button id="MenuSumbit" class="btn btn-outline-secondary" type="button">提交</button>
+                                <button id="MenuSumbit2" onclick="save()" class="btn btn-outline-secondary" type="button">提交2</button>
                             </div>
-                            <button class="btn btn-primary btn-sm" id="save">提交</button>
                         </div>
                     </div>
                 </div>
@@ -904,24 +904,19 @@
             window.location.href="http://192.168.0.30:8080/menu/"+menu;
 
     });
+    function save() {
+        $.ajax({
+            url:"Order",
+            type:"post",
+            dataType : "json",
+            data:"name=sss",
+            contentType:"application/json;charset=utf-8",  //缺失会出现URL编码，无法转成json对象
+            success:function(){
+                alert("成功");
+            }
+        });
+    }
+</script>
 
-</script>
-<script>
-    $("#save").on('click',function(){
-    alert("ss")
-        var  str={"name":"菜鸟教程"};
-        var string=encodeURI(JSON.stringify(str),"utf-8");
-    $.ajax({
-    url:"Order",
-    type:"POST",
-    dataType : "json",
-    data: {"data": string},
-    contentType:"application/json;charset=utf-8",  //缺失会出现URL编码，无法转成json对象
-        success:function(){
-        alert("成功");
-        }
-    });
-});
-</script>
 </body>
 </html>

@@ -34,7 +34,16 @@ public class  Product implements Serializable {
     //数量
     @Column
     private Integer number;
-
+    @Column
+    private String serial_number;
+    @Column
+    private String unit;
+    @Column
+    private String price;
+    @Column
+    private String amount;
+    @Column
+    private String note;
     public Product(String name, int num) {
         this.product_name=name;
         this.number=num;
