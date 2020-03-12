@@ -2,8 +2,11 @@ package com.hnsic.jpa.utils;
 
 import com.hnsic.jpa.entity.po.Order;
 import com.hnsic.jpa.entity.po.Product;
+import com.hnsic.jpa.entity.po.Recording;
 import com.hnsic.jpa.entity.vo.OrderVo;
 import com.hnsic.jpa.entity.vo.ProductVo;
+
+import java.util.List;
 
 /**
  * 将product和productvo互换、order和ordervo互换
@@ -45,13 +48,14 @@ public class BeanUtils {
         po.setTel(vo.getTel());
         return po;
     }
-    public static OrderVo Order_Po_to_Vo(Order po){
+    public static OrderVo Order_Po_to_Vo(Order po, List<Recording> recordings){
         OrderVo vo=new OrderVo();
-        vo.setOrderid(vo.getOrderid());
+        vo.setOrderid(po.getOrderid());
         vo.setOrderName(po.getOrderName());
         vo.setDate(po.getDate());
         vo.setBiller(po.getBiller());
         vo.setTel(po.getTel());
+        vo.setRecordingList(recordings);
         return vo;
     }
 

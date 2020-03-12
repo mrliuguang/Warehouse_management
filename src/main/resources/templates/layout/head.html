@@ -28,9 +28,9 @@
             <ul class="nav metismenu" id="side-menu">
                 <li class="nav-header">
                     <div class="dropdown profile-element">
-                        <img alt="image" class="rounded-circle" th:src="@{/asserts/img/profile_small.jpg}"/>
+                        <img alt="image" class="rounded-circle" width="50" height="50"  type="image/svg+xml" th:src="@{/asserts/img/defaultAva.svg}"/>
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <span class="block m-t-xs font-bold">王宇</span>
+                            <span class="block m-t-xs font-bold">[[${loginUser}]]</span>
                             <span class="text-muted text-xs block">管理员 <b class="caret"></b></span>
                         </a>
                         <ul class="dropdown-menu animated fadeInRight m-t-xs">
@@ -59,6 +59,7 @@
                     <ul class="nav nav-second-level collapse">
                         <li><a th:href="@{/Recordings/1}">货物记录表</a></li>
                         <li><a th:href="@{/Products/1}">货物表</a></li>
+                        <li><a th:href="@{/Orders/1}">订单表</a></li>
                     </ul>
                 </li>
                 <li>
@@ -67,8 +68,8 @@
                         </i> <span class="nav-label">输入记录</span></a>
                     <ul class="nav nav-second-level collapse">
                         <li><a th:href="@{/toRecordingAdd}">货物记录增加</a></li>
-                        <li><a th:href="@{/toProductAdd
-                        }">货物增加</a></li>
+                        <li><a th:href="@{/toProductAdd}">货物增加</a></li>
+                        <li><a th:href="@{/toOrderAdd}">订单增加</a></li>
                     </ul>
                 </li>
             </ul>

@@ -81,11 +81,12 @@
                         </div>
                         <div class="ibox-content">
                             <form >
-
+                                <input type="hidden" name="_method" value="put" th:if="${order!=null}"/>
+                                <input type="hidden" name="recordingid" th:if="${order!=null}" th:value="${order.orderid}">
                                 <div class="form-group  row">
                                     <label class="col-sm-2 col-form-label">订单名称：</label>
                                     <div class="col-sm-10">
-                                        <input name="order_name"  type="text" class="form-control">
+                                        <input name="order_name" th:value="${order!=null}?${order.orderName}"  type="text" class="form-control">
                                     </div>
                                 </div>
                                 <div class="hr-line-dashed"></div>
@@ -94,13 +95,13 @@
                                     <div class="form-group row col-md-6">
                                         <label class="col-sm-2 col-form-label">开单人：</label>
                                         <div class="col-sm-10">
-                                            <input name="biller" type="text"  class="form-control" >
+                                            <input name="biller" th:value="${order!=null}?${order.biller}" type="text"  class="form-control" >
                                         </div>
                                     </div>
                                     <div class="form-group row col-md-6">
                                         <label class="col-sm-2 col-form-label">时间：</label>
                                         <div class="col-sm-10">
-                                            <input name="date" type="text" id="datepicker" class="form-control" >
+                                            <input name="date" th:value="${order!=null}?${order.date}" type="text" id="datepicker" class="form-control" >
                                         </div>
                                     </div>
 
@@ -435,7 +436,7 @@
             error: function(XMLHttpRequest, textStatus, errorThrown) {
                 },
             complete: function(response) {
-                location.href = "http://192.168.0.30:8080"
+                location.href = "http://192.168.0.30:8080/main"
                 console.log( response.responseText); //Want to view response in test.php
             }
          })
