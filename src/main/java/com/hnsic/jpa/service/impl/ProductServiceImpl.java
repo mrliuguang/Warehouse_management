@@ -38,6 +38,7 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public int findByNameAdd(String name, Recording recording) {
         System.out.println("更改货物库存....");
+        System.out.println("查找货物库存....");
         Product byName = productRespository.findByName(name);
         if(byName==null)
         {

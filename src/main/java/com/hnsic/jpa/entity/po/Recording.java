@@ -28,6 +28,13 @@ public class Recording implements Serializable {
     //价格
     @Column
     private Integer number;
+    @Column
+    private String unit;
+    @Column
+    private Integer amount;
+    @Column
+    private Integer serial_number;
+
     //数量
     @Column
     private String price;

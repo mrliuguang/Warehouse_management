@@ -1,5 +1,6 @@
 package com.hnsic.jpa.entity.vo;
 
+import com.hnsic.jpa.entity.po.Product;
 import com.hnsic.jpa.entity.po.Recording;
 import lombok.Data;
 
@@ -15,13 +16,7 @@ import java.util.List;
  * Version   1.0
  **/
 @Data
-public class ProductVo {
-    //货物的id 来自product表
-    private Integer product_id;
-    //货物名称 来自product表
-    private String  productVo_name;
-    //货物的数量 来自product表
-    private Integer productVo_number;
-    //所有同名货物的记录
+public class ProductVo extends Product {
+
     private List<Recording> recordingList;
 }

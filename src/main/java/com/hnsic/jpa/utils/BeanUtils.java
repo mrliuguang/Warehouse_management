@@ -21,19 +21,29 @@ public class BeanUtils {
 
     public static Product product_Vo_to_Po(ProductVo vo){
         Product po=new Product();
-        if(vo.getProduct_id()!=null)
-            po.setProductid(vo.getProduct_id());
+        if(vo.getProductid()!=null)
+            po.setProductid(vo.getProductid());
         else
             po.setProductid(null);
-        po.setProduct_name(vo.getProductVo_name());
-        po.setNumber(vo.getProductVo_number());
+        po.setProduct_name(vo.getProduct_name());
+        po.setNumber(vo.getNumber());
+        po.setAmount(vo.getAmount());
+        po.setNote(vo.getNote());
+        po.setPrice(vo.getPrice());
+        po.setUnit(vo.getUnit());
+        po.setSerial_number(vo.getSerial_number());
         return po;
     }
     public static ProductVo product_Po_to_Vo(Product po){
         ProductVo vo=new ProductVo();
-        vo.setProduct_id(po.getProductid());
-        vo.setProductVo_name(po.getProduct_name());
-        vo.setProductVo_number(po.getNumber());
+        vo.setProductid(po.getProductid());
+        vo.setProduct_name(po.getProduct_name());
+        vo.setNumber(po.getNumber());
+        vo.setSerial_number(po.getSerial_number());
+        vo.setAmount(po.getAmount());
+        vo.setNote(po.getNote());
+        vo.setPrice(po.getPrice());
+        vo.setUnit(po.getUnit());
         return vo;
     }
     public static Order Order_Vo_to_Po(OrderVo vo){
